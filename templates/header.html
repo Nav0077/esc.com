@@ -1,0 +1,78 @@
+{% load static %}
+
+<!-- Live Score Ticker -->
+<div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700 py-2 relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center overflow-hidden">
+        <div class="bg-amber-500 text-black text-xs font-bold px-3 py-1 rounded mr-4 z-10 whitespace-nowrap">
+            LIVE UPDATE
+        </div>
+
+        <div class="ticker-wrap w-full">
+            <div class="ticker text-sm font-medium text-slate-300">
+                <span class="mr-12">🏏 <span class="text-white font-bold">ESC</span> vs <span class="text-white font-bold">Thunder XI</span>: ESC 187/4 (32.2 ov) - Target 245</span>
+                <span class="mr-12">🏆 <span class="text-amber-400">Result:</span> Elite SC won by 45 runs vs Warriors CC</span>
+                <span class="mr-12">⭐ <span class="text-amber-400">MoM:</span> Rahul Sharma (87*)</span>
+                <span class="mr-12">📅 <span class="text-amber-400">Next:</span> vs Royal Strikers @ Sunday 2:00 PM</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-[#050505]/80 backdrop-blur-md border-b border-white/5" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between h-24">
+
+            <!-- Logo -->
+            <a href="{% url 'home' %}" class="flex items-center gap-3 group decoration-none">
+                <div class="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center shadow-[0_0_15px_rgba(255,215,0,0.3)] group-hover:scale-105 transition-transform">
+                    <i class="fas fa-cricket text-2xl text-black"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black text-white leading-none">
+                        ELITE <span class="text-gradient-gold">SC</span>
+                    </h1>
+                    <p class="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase mt-1">
+                        Est. 2015
+                    </p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-6 lg:gap-8">
+                <a href="{% url 'home' %}" class="nav-link">Home</a>
+                <a href="{% url 'my_matches' %}" class="nav-link">My Matches</a>
+                <a href="{% url 'tournaments' %}" class="nav-link">Tournaments</a>
+                <a href="{% url 'players' %}" class="nav-link">Squad</a>
+                <a href="{% url 'stats' %}" class="nav-link">Stats</a>
+                <a href="{% url 'gallery' %}" class="nav-link">Gallery</a>
+                <a href="{% url 'about' %}" class="nav-link">Club</a>
+            </div>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="{% url 'contact' %}" class="hidden md:flex btn-gold px-6 py-2.5 rounded-full text-xs decoration-none items-center">
+                    Join The Club
+                </a>
+
+                <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-black border-t border-gray-800 absolute w-full left-0 top-24 shadow-2xl">
+        <div class="flex flex-col p-6 gap-4">
+            <a href="{% url 'home' %}" class="text-lg text-gray-300">Home</a>
+            <a href="{% url 'my_matches' %}" class="text-lg text-gray-300">My Matches</a>
+            <a href="{% url 'tournaments' %}" class="text-lg text-gray-300">Tournaments</a>
+            <a href="{% url 'players' %}" class="text-lg text-gray-300">Players</a>
+            <a href="{% url 'stats' %}" class="text-lg text-gray-300">Stats Center</a>
+            <a href="{% url 'gallery' %}" class="text-lg text-gray-300">Gallery</a>
+            <a href="{% url 'about' %}" class="text-lg text-gray-300">Club Info</a>
+            <a href="{% url 'contact' %}" class="text-lg font-bold text-yellow-400">Contact Us</a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,189 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELITE SOCIAL CLUB | Premier Cricket Club</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Placeholder -->
+   {% include 'header.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        {% block content %}
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+            <!-- Hero -->
+            <div class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+                <!-- Background Image with Overlay -->
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1600&q=80" alt="Cricket Stadium" class="w-full h-full object-cover opacity-40 grayscale mix-blend-overlay">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#050505]/90 via-transparent to-[#050505]/90"></div>
+                </div>
+
+                <div class="relative z-10 max-w-7xl mx-auto px-4 text-center mt-[-60px]">
+                    <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-500/10 backdrop-blur-md fade-in">
+                        <span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
+                        <span class="text-yellow-400 text-xs font-bold tracking-widest uppercase">Official Club Website</span>
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter leading-none fade-in delay-100">
+                        WE ARE <span class="text-gradient-gold drop-shadow-2xl">ELITE</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed fade-in delay-200">
+                        Forging champions since 2015. Where excellence meets passion on every pitch. Join the legacy of the district's finest.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-6 fade-in delay-300">
+                        <a href="tournaments.html" class="btn-gold px-10 py-4 rounded-full text-sm decoration-none">
+                            View Matches
+                        </a>
+                        <a href="players.html" class="px-10 py-4 glass-panel hover:bg-white/10 text-white rounded-full text-sm font-bold tracking-wider uppercase transition-all border border-white/10 hover:border-white/30 decoration-none flex items-center">
+                            Meet the Squad
+                        </a>
+                    </div>
+
+                    <!-- Stats Row -->
+                    <div id="home-stats" class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto border-t border-white/5 pt-12 fade-in delay-300">
+                        <div class="text-center group">
+                            <div class="text-4xl md:text-5xl font-black text-white mb-2 counter group-hover:text-yellow-400 transition-colors" data-target="156">0</div>
+                            <div class="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold">Matches Played</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="text-4xl md:text-5xl font-black text-white mb-2 counter group-hover:text-green-400 transition-colors" data-target="112">0</div>
+                            <div class="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold">Victories</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="text-4xl md:text-5xl font-black text-white mb-2 counter group-hover:text-yellow-400 transition-colors" data-target="23">0</div>
+                            <div class="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold">Championships</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="text-4xl md:text-5xl font-black text-white mb-2 counter group-hover:text-blue-400 transition-colors" data-target="45">0</div>
+                            <div class="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold">Elite Players</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Match Card Overlay -->
+            <div class="max-w-6xl mx-auto px-4 -mt-24 relative z-20 pb-20">
+                <div class="glass-panel glass-panel-hover rounded-2xl p-0.5 shadow-2xl">
+                    <div class="bg-[#0f1115] rounded-[14px] p-6 md:p-10 relative overflow-hidden">
+                        <!-- BG Effect -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+                        
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+                            <!-- Team 1 -->
+                            <div class="flex-1 text-center md:text-right order-2 md:order-1">
+                                <div class="text-3xl font-black text-white mb-1 tracking-tight">ELITE SC</div>
+                                <div class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600">187/4</div>
+                                <div class="text-sm font-bold text-gray-500 mt-2 uppercase tracking-wider">32.2 Overs</div>
+                            </div>
+                            
+                            <!-- VS Badge -->
+                            <div class="order-1 md:order-2 flex flex-col items-center">
+                                <div class="text-[10px] font-black text-red-500 bg-red-500/10 border border-red-500/20 px-3 py-1 rounded-full mb-4 animate-pulse uppercase tracking-widest">● Live Match</div>
+                                <div class="w-16 h-16 rounded-full bg-[#050505] border border-gray-800 flex items-center justify-center shadow-inner relative">
+                                    <span class="text-2xl font-black italic text-gray-700 relative z-10">VS</span>
+                                </div>
+                                <div class="text-xs font-bold text-gray-500 mt-4 uppercase tracking-widest">District League</div>
+                            </div>
+
+                            <!-- Team 2 -->
+                            <div class="flex-1 text-center md:text-left order-3">
+                                <div class="text-3xl font-black text-white mb-1 tracking-tight">THUNDER XI</div>
+                                <div class="text-5xl font-black text-gray-700">---</div>
+                                <div class="text-sm font-bold text-gray-500 mt-2 uppercase tracking-wider">Yet to Bat</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs font-bold text-gray-400 uppercase tracking-widest gap-4">
+                            <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-yellow-500"></i> City Stadium, Bangalore</span>
+                            <a href="tournaments.html" class="text-yellow-500 hover:text-white transition-colors flex items-center gap-2 group decoration-none">
+                                View Full Scorecard <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latest News -->
+            <div class="max-w-7xl mx-auto px-4 py-20 border-t border-white/5">
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <span class="text-yellow-500 font-bold uppercase tracking-widest text-xs mb-2 block">Club Updates</span>
+                        <h2 class="text-4xl md:text-5xl font-black text-white">LATEST <span class="text-gradient-gold">NEWS</span></h2>
+                    </div>
+                    <button class="hidden md:block text-xs font-bold text-gray-400 hover:text-white uppercase tracking-widest border-b border-gray-800 hover:border-white pb-2 transition-all cursor-pointer">View Archive</button>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- News Card 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 h-64 border border-white/5">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1624194686419-7565b93d6d06?w=800&q=80" alt="News" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 z-20 bg-yellow-500 text-black text-[10px] font-black px-3 py-1.5 rounded uppercase tracking-wider">Match Report</div>
+                        </div>
+                        <div class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span>Dec 15, 2024</span>
+                            <span class="w-1 h-1 bg-gray-700 rounded-full"></span>
+                            <span>Admin</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors leading-tight">Elite SC Clinches District Championship in Thriller</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed line-clamp-2">In a match that went down to the last ball, our team showed nerves of steel to lift the trophy against the defending champions.</p>
+                    </div>
+
+                    <!-- News Card 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 h-64 border border-white/5">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&q=80" alt="News" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 z-20 bg-blue-600 text-white text-[10px] font-black px-3 py-1.5 rounded uppercase tracking-wider">Announcement</div>
+                        </div>
+                        <div class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span>Dec 10, 2024</span>
+                            <span class="w-1 h-1 bg-gray-700 rounded-full"></span>
+                            <span>Coach</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors leading-tight">Annual Selection Camp 2025 Announced</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed line-clamp-2">Calling all aspiring cricketers! We are opening registrations for our prestigious annual training camp starting next month.</p>
+                    </div>
+
+                    <!-- News Card 3 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-2xl mb-6 h-64 border border-white/5">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1589801258579-18e091f4ae9b?w=800&q=80" alt="News" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 z-20 bg-green-600 text-white text-[10px] font-black px-3 py-1.5 rounded uppercase tracking-wider">Milestone</div>
+                        </div>
+                        <div class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span>Dec 05, 2024</span>
+                            <span class="w-1 h-1 bg-gray-700 rounded-full"></span>
+                            <span>Stats Team</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors leading-tight">Rahul Sharma reaches 3000 Career Runs</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed line-clamp-2">A historic milestone for our captain as he becomes the first player in club history to cross the 3k mark across all formats.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+    </main>
+
+    <!-- Footer Placeholder -->
+    {% include 'footer.html' %}
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

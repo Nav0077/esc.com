@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | ELITE SOCIAL CLUB</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Placeholder -->
+    {% include 'header.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="section">
+             <div class="max-w-7xl mx-auto px-4 py-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-6xl font-black mb-4">OUR <span class="text-gradient-gold">MOMENTS</span></h2>
+                    <p class="text-gray-400 font-light">Capturing the spirit of the game.</p>
+                </div>
+                <div class="grid md:grid-cols-4 gap-4 h-[600px]">
+                    <div class="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden relative group cursor-pointer">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1200" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-0 left-0 p-8 z-20 translate-y-4 group-hover:translate-y-0 transition-transform opacity-0 group-hover:opacity-100">
+                            <h3 class="text-3xl font-black text-white leading-none mb-1">Champions 2024</h3>
+                            <p class="text-yellow-500 text-xs font-bold uppercase tracking-widest">District League Finals</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden relative group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1589801258579-18e091f4ae9b?w=600" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden relative group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1624194686419-7565b93d6d06?w=600" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                     <div class="rounded-2xl overflow-hidden relative group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1593341646246-2776c59b6826?w=600" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                     <div class="rounded-2xl overflow-hidden relative group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1562077772-3bd305261997?w=600" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+     {% include 'footer.html' %}
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

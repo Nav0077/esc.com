@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players | ELITE SOCIAL CLUB</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Placeholder -->
+    {% include 'header.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <!-- PLAYERS SECTION -->
+        <section id="players" class="section">
+            <div class="max-w-7xl mx-auto px-4 py-20">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">THE <span class="text-gradient-gold">SQUAD</span></h2>
+                    <p class="text-gray-400 font-light text-lg">Meet the titans who wear the shield.</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-3 mb-16 fade-in">
+                    <button onclick="filterPlayers('all')" class="player-filter btn-gold px-6 py-2 rounded-full text-xs font-bold shadow-lg cursor-pointer">Full Squad</button>
+                    <button onclick="filterPlayers('batsman')" class="player-filter px-6 py-2 rounded-full glass-panel text-gray-400 font-bold text-xs uppercase hover:text-white hover:bg-white/10 transition-all border border-transparent hover:border-white/20 cursor-pointer">Batsmen</button>
+                    <button onclick="filterPlayers('bowler')" class="player-filter px-6 py-2 rounded-full glass-panel text-gray-400 font-bold text-xs uppercase hover:text-white hover:bg-white/10 transition-all border border-transparent hover:border-white/20 cursor-pointer">Bowlers</button>
+                    <button onclick="filterPlayers('allrounder')" class="player-filter px-6 py-2 rounded-full glass-panel text-gray-400 font-bold text-xs uppercase hover:text-white hover:bg-white/10 transition-all border border-transparent hover:border-white/20 cursor-pointer">All Rounders</button>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Player Card 1 -->
+                    <div class="player-card glass-panel glass-panel-hover rounded-2xl overflow-hidden group relative border border-white/5" data-role="batsman">
+                        <!-- Image Container -->
+                        <div class="h-96 bg-gradient-to-b from-gray-800 to-black relative overflow-hidden">
+                            <!-- Placeholder for realistic cricket player visual -->
+                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=600')] bg-cover bg-center opacity-40 mix-blend-luminosity group-hover:scale-110 transition-transform duration-700"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                            
+                            <!-- Badges -->
+                            <div class="absolute top-4 left-4 z-10 flex gap-2">
+                                <span class="bg-gradient-gold text-black text-[10px] font-black px-2 py-1 rounded shadow-lg uppercase tracking-wider">Captain</span>
+                            </div>
+                            <div class="absolute top-4 right-4 z-10">
+                                <span class="text-6xl font-black text-white/5 select-none">07</span>
+                            </div>
+                            
+                            <!-- Name & Role -->
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                <h3 class="text-3xl font-black text-white mb-1 uppercase italic tracking-wider leading-none">Rahul <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Sharma</span></h3>
+                                <p class="text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mt-2 border-l-2 border-yellow-500 pl-3">Top Order Batsman</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="p-6 bg-[#0a0a0a] relative">
+                            <div class="grid grid-cols-3 gap-4 text-center mb-6">
+                                <div>
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Runs</div>
+                                    <div class="text-xl font-black text-white">2,847</div>
+                                </div>
+                                <div class="border-x border-white/10">
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Avg</div>
+                                    <div class="text-xl font-black text-yellow-500">48.2</div>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">SR</div>
+                                    <div class="text-xl font-black text-white">142</div>
+                                </div>
+                            </div>
+                            <button onclick="showPlayerStats('rahul')" class="w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-lg text-xs font-bold uppercase tracking-widest transition-all text-gray-300 hover:text-white flex items-center justify-center gap-2 group-hover:bg-yellow-500 group-hover:text-black group-hover:border-transparent cursor-pointer">
+                                Full Profile <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Player Card 2 -->
+                    <div class="player-card glass-panel glass-panel-hover rounded-2xl overflow-hidden group relative border border-white/5" data-role="bowler">
+                        <div class="h-96 bg-gradient-to-b from-gray-800 to-black relative overflow-hidden">
+                             <div class="absolute inset-0 flex items-end justify-center pb-0 bg-gray-800">
+                                <i class="fas fa-user text-[12rem] text-white/5 transform translate-y-10"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                            
+                            <div class="absolute top-4 left-4 z-10">
+                                <span class="bg-gray-700 text-white text-[10px] font-black px-2 py-1 rounded shadow-lg uppercase tracking-wider">Vice Captain</span>
+                            </div>
+                             <div class="absolute top-4 right-4 z-10">
+                                <span class="text-6xl font-black text-white/5 select-none">18</span>
+                            </div>
+                            
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                <h3 class="text-3xl font-black text-white mb-1 uppercase italic tracking-wider leading-none">Amit <br> <span class="text-gray-400 group-hover:text-white transition-colors">Patel</span></h3>
+                                <p class="text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mt-2 border-l-2 border-green-500 pl-3">Pace Bowler</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 bg-[#0a0a0a]">
+                            <div class="grid grid-cols-3 gap-4 text-center mb-6">
+                                <div>
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Wkts</div>
+                                    <div class="text-xl font-black text-white">187</div>
+                                </div>
+                                <div class="border-x border-white/10">
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Eco</div>
+                                    <div class="text-xl font-black text-green-500">6.2</div>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Best</div>
+                                    <div class="text-xl font-black text-white">6/23</div>
+                                </div>
+                            </div>
+                            <button onclick="showPlayerStats('amit')" class="w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-lg text-xs font-bold uppercase tracking-widest transition-all text-gray-300 hover:text-white flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-black group-hover:border-transparent cursor-pointer">
+                                Full Profile <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Player Card 3 -->
+                    <div class="player-card glass-panel glass-panel-hover rounded-2xl overflow-hidden group relative border border-white/5" data-role="allrounder">
+                        <div class="h-96 bg-gradient-to-b from-gray-800 to-black relative overflow-hidden">
+                             <div class="absolute inset-0 flex items-end justify-center pb-0 bg-gray-800">
+                                <i class="fas fa-user text-[12rem] text-white/5 transform translate-y-10"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                            
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                <h3 class="text-3xl font-black text-white mb-1 uppercase italic tracking-wider leading-none">Arjun <br> <span class="text-gray-400 group-hover:text-white transition-colors">Reddy</span></h3>
+                                <p class="text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mt-2 border-l-2 border-purple-500 pl-3">All Rounder</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 bg-[#0a0a0a]">
+                            <div class="grid grid-cols-3 gap-4 text-center mb-6">
+                                <div>
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Runs</div>
+                                    <div class="text-xl font-black text-white">1,523</div>
+                                </div>
+                                <div class="border-x border-white/10">
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Wkts</div>
+                                    <div class="text-xl font-black text-purple-500">98</div>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">MoM</div>
+                                    <div class="text-xl font-black text-white">15</div>
+                                </div>
+                            </div>
+                            <button onclick="showPlayerStats('arjun')" class="w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-lg text-xs font-bold uppercase tracking-widest transition-all text-gray-300 hover:text-white flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-black group-hover:border-transparent cursor-pointer">
+                                Full Profile <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Player Card 4 -->
+                    <div class="player-card glass-panel glass-panel-hover rounded-2xl overflow-hidden group relative border border-white/5" data-role="batsman">
+                        <div class="h-96 bg-gradient-to-b from-gray-800 to-black relative overflow-hidden">
+                             <div class="absolute inset-0 flex items-end justify-center pb-0 bg-gray-800">
+                                <i class="fas fa-user text-[12rem] text-white/5 transform translate-y-10"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                            
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                <h3 class="text-3xl font-black text-white mb-1 uppercase italic tracking-wider leading-none">Karthik <br> <span class="text-gray-400 group-hover:text-white transition-colors">Nair</span></h3>
+                                <p class="text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mt-2 border-l-2 border-yellow-500 pl-3">Batsman</p>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 bg-[#0a0a0a]">
+                            <div class="grid grid-cols-3 gap-4 text-center mb-6">
+                                <div>
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Runs</div>
+                                    <div class="text-xl font-black text-white">2,156</div>
+                                </div>
+                                <div class="border-x border-white/10">
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">Avg</div>
+                                    <div class="text-xl font-black text-yellow-500">42.8</div>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-1">SR</div>
+                                    <div class="text-xl font-black text-white">130</div>
+                                </div>
+                            </div>
+                            <button onclick="showPlayerStats('rahul')" class="w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-lg text-xs font-bold uppercase tracking-widest transition-all text-gray-300 hover:text-white flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-black group-hover:border-transparent cursor-pointer">
+                                Full Profile <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+     {% include 'footer.html' %}
+
+    <!-- ADVANCED PLAYER MODAL -->
+    <div id="playerModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-50 hidden overflow-y-auto">
+        <div class="min-h-screen px-4 text-center">
+            <span class="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+            <div class="inline-block w-full max-w-5xl my-8 text-left align-middle transition-all transform bg-slate-900 border border-white/10 rounded-2xl shadow-2xl relative">
+                <button onclick="closePlayerModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10 text-xl cursor-pointer border-none bg-transparent"><i class="fas fa-times"></i></button>
+                <div id="playerModalContent">
+                    <!-- Dynamic Content Loaded via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

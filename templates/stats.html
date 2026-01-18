@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats Vault | ELITE SOCIAL CLUB</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Placeholder -->
+    {% include 'header.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <!-- STATS CENTER SECTION -->
+        <section id="stats-center" class="section">
+            <div class="max-w-7xl mx-auto px-4 py-20">
+                 <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">STATS <span class="text-gradient-gold">VAULT</span></h2>
+                    <p class="text-gray-400 text-lg font-light">The historic records that define our legacy.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Batting Records -->
+                    <div class="glass-panel glass-panel-hover p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-8 opacity-5"><i class="fas fa-baseball-bat-ball text-9xl"></i></div>
+                        <h3 class="text-2xl font-black mb-8 text-white uppercase tracking-widest flex items-center gap-3">
+                            <i class="fas fa-crown text-yellow-500"></i> Run Machines
+                        </h3>
+                        <div class="space-y-2 relative z-10">
+                            <!-- #1 -->
+                            <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-yellow-500/10 to-transparent border border-yellow-500/20 rounded-xl">
+                                <div class="text-3xl font-black text-yellow-500/50 w-8">01</div>
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700"><i class="fas fa-user text-gray-400"></i></div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-white text-lg">Rahul Sharma</div>
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">89 Matches</div>
+                                </div>
+                                <div class="text-3xl font-black text-yellow-500">2,847</div>
+                            </div>
+                            <!-- #2 -->
+                            <div class="flex items-center gap-4 p-4 hover:bg-white/5 rounded-xl transition border border-transparent hover:border-white/10">
+                                <div class="text-3xl font-black text-gray-700 w-8">02</div>
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700"><i class="fas fa-user text-gray-500"></i></div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-gray-300 text-lg">Karthik Nair</div>
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">75 Matches</div>
+                                </div>
+                                <div class="text-2xl font-black text-white">2,156</div>
+                            </div>
+                            <!-- #3 -->
+                            <div class="flex items-center gap-4 p-4 hover:bg-white/5 rounded-xl transition border border-transparent hover:border-white/10">
+                                <div class="text-3xl font-black text-gray-700 w-8">03</div>
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700"><i class="fas fa-user text-gray-500"></i></div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-gray-300 text-lg">Deepak Verma</div>
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">62 Matches</div>
+                                </div>
+                                <div class="text-2xl font-black text-white">1,987</div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center relative z-10">
+                            <button class="btn-gold w-full py-3 rounded-lg text-xs shadow-none hover:shadow-lg">View All Batting Records</button>
+                        </div>
+                    </div>
+
+                    <!-- Bowling Records -->
+                    <div class="glass-panel glass-panel-hover p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-8 opacity-5"><i class="fas fa-bullseye text-9xl"></i></div>
+                        <h3 class="text-2xl font-black mb-8 text-white uppercase tracking-widest flex items-center gap-3">
+                            <i class="fas fa-crosshairs text-green-500"></i> Wicket Takers
+                        </h3>
+                        <div class="space-y-2 relative z-10">
+                            <!-- #1 -->
+                            <div class="flex items-center gap-4 p-4 bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 rounded-xl">
+                                <div class="text-3xl font-black text-green-500/50 w-8">01</div>
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700"><i class="fas fa-user text-gray-400"></i></div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-white text-lg">Amit Patel</div>
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">78 Matches</div>
+                                </div>
+                                <div class="text-3xl font-black text-green-500">187</div>
+                            </div>
+                            <!-- #2 -->
+                            <div class="flex items-center gap-4 p-4 hover:bg-white/5 rounded-xl transition border border-transparent hover:border-white/10">
+                                <div class="text-3xl font-black text-gray-700 w-8">02</div>
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700"><i class="fas fa-user text-gray-500"></i></div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-gray-300 text-lg">Suresh Kumar</div>
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">65 Matches</div>
+                                </div>
+                                <div class="text-2xl font-black text-white">134</div>
+                            </div>
+                            <!-- #3 -->
+                            <div class="flex items-center gap-4 p-4 hover:bg-white/5 rounded-xl transition border border-transparent hover:border-white/10">
+                                <div class="text-3xl font-black text-gray-700 w-8">03</div>
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700"><i class="fas fa-user text-gray-500"></i></div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-gray-300 text-lg">Arjun Reddy</div>
+                                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">55 Matches</div>
+                                </div>
+                                <div class="text-2xl font-black text-white">98</div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center relative z-10">
+                            <button class="w-full py-3 rounded-lg text-xs font-bold uppercase tracking-widest border border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-all cursor-pointer bg-transparent">View All Bowling Records</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    {% include 'footer.html' %}
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

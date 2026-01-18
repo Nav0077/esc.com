@@ -1,0 +1,423 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournaments | ELITE SOCIAL CLUB</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Placeholder -->
+    {% include 'header.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <!-- TOURNAMENTS SECTION -->
+        <section id="tournaments" class="section">
+            <!-- Header with Tournament Selector -->
+            <div class="relative bg-gradient-to-r from-slate-900 to-black border-b border-white/5 pb-10 pt-20">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-8">
+                        <div>
+                            <span class="text-yellow-500 font-bold text-xs uppercase tracking-widest mb-2 block">Season 2024-25</span>
+                            <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight">TOURNAMENT <span class="text-gradient-gold">HUB</span></h2>
+                        </div>
+                        <!-- League Selector -->
+                        <div class="flex bg-white/5 p-1 rounded-full backdrop-blur-md border border-white/10">
+                            <button class="px-6 py-2 rounded-full bg-yellow-500 text-black text-xs font-bold shadow-lg transition-all cursor-pointer border-none">District League</button>
+                            <button class="px-6 py-2 rounded-full text-gray-400 hover:text-white text-xs font-bold transition-all bg-transparent border-none cursor-pointer">Premier Cup</button>
+                            <button class="px-6 py-2 rounded-full text-gray-400 hover:text-white text-xs font-bold transition-all bg-transparent border-none cursor-pointer">T20 Bash</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Navigation -->
+                    <div class="flex gap-8 border-b border-white/10 overflow-x-auto">
+                        <button onclick="switchTournamentTab('overview')" class="tournament-tab active pb-4 text-sm font-bold uppercase tracking-wider text-yellow-500 border-b-2 border-yellow-500 transition-all hover:text-yellow-400 bg-transparent cursor-pointer">Overview</button>
+                        <button onclick="switchTournamentTab('fixtures')" class="tournament-tab pb-4 text-sm font-bold uppercase tracking-wider text-gray-500 border-b-2 border-transparent transition-all hover:text-white bg-transparent cursor-pointer">Fixtures</button>
+                        <button onclick="switchTournamentTab('standings')" class="tournament-tab pb-4 text-sm font-bold uppercase tracking-wider text-gray-500 border-b-2 border-transparent transition-all hover:text-white bg-transparent cursor-pointer">Standings</button>
+                        <button onclick="switchTournamentTab('stats')" class="tournament-tab pb-4 text-sm font-bold uppercase tracking-wider text-gray-500 border-b-2 border-transparent transition-all hover:text-white bg-transparent cursor-pointer">Stats</button>
+                        <button onclick="switchTournamentTab('bracket')" class="tournament-tab pb-4 text-sm font-bold uppercase tracking-wider text-gray-500 border-b-2 border-transparent transition-all hover:text-white bg-transparent cursor-pointer">Bracket</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content Area -->
+            <div class="max-w-7xl mx-auto px-4 py-12 min-h-[500px]">
+                
+                <!-- OVERVIEW TAB -->
+                <div id="tab-overview" class="tournament-content block fade-in">
+                    <!-- Featured Match (Next Up) -->
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2">
+                            <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-2">
+                                <span class="w-1 h-5 bg-blue-500 rounded-full"></span> Next Match
+                            </h3>
+                            <div class="glass-panel p-8 rounded-2xl relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent"></div>
+                                <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                                     <div class="text-center">
+                                        <div class="w-20 h-20 mx-auto bg-gradient-gold rounded-full flex items-center justify-center text-3xl font-black text-black mb-3">E</div>
+                                        <div class="font-bold text-white text-xl">Elite SC</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-2">Dec 20 • 14:00 PM</div>
+                                        <div class="text-4xl font-black text-white mb-2">VS</div>
+                                        <div class="text-gray-400 text-sm">City Stadium</div>
+                                        <button class="mt-6 px-6 py-2 border border-white/20 hover:bg-white hover:text-black rounded-full text-xs font-bold uppercase tracking-widest transition-all bg-transparent text-white cursor-pointer">Match Preview</button>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-20 h-20 mx-auto bg-gray-800 rounded-full flex items-center justify-center text-3xl font-black text-gray-500 mb-3 border border-white/10">R</div>
+                                        <div class="font-bold text-white text-xl">Royal Strikers</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Results List -->
+                            <div class="mt-12">
+                                <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-2">
+                                    <span class="w-1 h-5 bg-green-500 rounded-full"></span> Recent Results
+                                </h3>
+                                <div class="space-y-4">
+                                    <!-- Result Item 1 -->
+                                    <div class="glass-panel hover:bg-white/5 p-4 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 cursor-pointer transition-colors" onclick="showMatchDetails(1)">
+                                        <div class="flex items-center gap-4 w-full md:w-1/3">
+                                            <div class="text-xs font-bold text-gray-500">Nov 15</div>
+                                            <div class="font-bold text-white">Elite SC <span class="text-gray-400 text-xs font-normal ml-1">won by 45 runs</span></div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-black text-white">245/6</span>
+                                            <span class="text-xs text-gray-600">vs</span>
+                                            <span class="font-black text-gray-400">200/10</span>
+                                        </div>
+                                        <div class="text-right w-full md:w-1/3">
+                                            <span class="text-[10px] font-bold text-green-400 border border-green-500/20 bg-green-500/10 px-2 py-1 rounded uppercase">Win</span>
+                                        </div>
+                                    </div>
+                                    <!-- Result Item 2 -->
+                                     <div class="glass-panel hover:bg-white/5 p-4 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 cursor-pointer transition-colors" onclick="showMatchDetails(2)">
+                                        <div class="flex items-center gap-4 w-full md:w-1/3">
+                                            <div class="text-xs font-bold text-gray-500">Nov 08</div>
+                                            <div class="font-bold text-white">Elite SC <span class="text-gray-400 text-xs font-normal ml-1">won by 14 runs</span></div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-black text-white">312/4</span>
+                                            <span class="text-xs text-gray-600">vs</span>
+                                            <span class="font-black text-gray-400">298/8</span>
+                                        </div>
+                                        <div class="text-right w-full md:w-1/3">
+                                            <span class="text-[10px] font-bold text-green-400 border border-green-500/20 bg-green-500/10 px-2 py-1 rounded uppercase">Win</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Info -->
+                        <div class="space-y-6">
+                            <!-- Tournament Info -->
+                            <div class="glass-panel p-6 rounded-2xl">
+                                <h4 class="font-bold text-white mb-4 uppercase tracking-widest text-xs">About League</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed mb-4">The premier district championship featuring the top 8 clubs from the region competing for the prestigious Golden Shield.</p>
+                                <div class="flex justify-between text-xs font-bold text-gray-500 border-t border-white/10 pt-4">
+                                    <span>Teams: 8</span>
+                                    <span>Format: T20</span>
+                                    <span>Prize: $50k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FIXTURES TAB -->
+                <div id="tab-fixtures" class="tournament-content hidden fade-in">
+                     <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-2">
+                        <span class="w-1 h-5 bg-yellow-500 rounded-full"></span> Upcoming Fixtures
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Fixture 1 -->
+                        <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-yellow-500/30 transition-all">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Match 14 • Dec 20</span>
+                                 <span class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-white transition-colors"><i class="fas fa-bell"></i></span>
+                            </div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-black font-black">E</div>
+                                    <span class="font-bold text-white text-lg">Elite SC</span>
+                                </div>
+                                <span class="text-xs font-bold text-gray-600">VS</span>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-gray-400 text-lg">Royal Strikers</span>
+                                    <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-500 font-black border border-white/10">R</div>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 -mx-6 -mb-6 p-4 flex justify-between items-center">
+                                <span class="text-xs font-bold text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i> City Stadium</span>
+                                <span class="text-xs font-bold text-yellow-500">14:00 PM IST</span>
+                            </div>
+                        </div>
+                        <!-- Fixture 2 -->
+                        <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:border-yellow-500/30 transition-all">
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Match 16 • Dec 24</span>
+                                 <span class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-white transition-colors"><i class="fas fa-bell"></i></span>
+                            </div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-500 font-black border border-white/10">D</div>
+                                    <span class="font-bold text-gray-400 text-lg">Daredevils</span>
+                                </div>
+                                 <span class="text-xs font-bold text-gray-600">VS</span>
+                                <div class="flex items-center gap-4">
+                                    <span class="font-bold text-white text-lg">Elite SC</span>
+                                    <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-black font-black">E</div>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 -mx-6 -mb-6 p-4 flex justify-between items-center">
+                                <span class="text-xs font-bold text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i> Green Park</span>
+                                <span class="text-xs font-bold text-yellow-500">10:00 AM IST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STANDINGS TAB -->
+                <div id="tab-standings" class="tournament-content hidden fade-in">
+                     <div class="glass-panel rounded-2xl p-0 overflow-hidden">
+                        <div class="p-6 border-b border-white/5 bg-gray-900/50">
+                             <h3 class="text-xl font-bold text-white uppercase tracking-widest flex items-center gap-2">
+                                <span class="w-1 h-5 bg-yellow-500 rounded-full"></span> Points Table
+                            </h3>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left border-collapse">
+                                <thead class="bg-black text-gray-500 text-xs uppercase tracking-wider font-bold">
+                                    <tr>
+                                        <th class="p-4 pl-6">Team</th>
+                                        <th class="p-4 text-center">P</th>
+                                        <th class="p-4 text-center">W</th>
+                                        <th class="p-4 text-center">L</th>
+                                        <th class="p-4 text-center">NR</th>
+                                        <th class="p-4 text-center">Pts</th>
+                                        <th class="p-4 text-right pr-6">NRR</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-white/5 text-sm font-medium">
+                                    <tr class="bg-gradient-to-r from-yellow-500/10 to-transparent">
+                                        <td class="p-4 pl-6 font-bold text-white flex items-center gap-3">
+                                            <span class="text-yellow-500 w-4">1</span> 
+                                            <div class="w-6 h-6 rounded-full bg-gradient-gold flex items-center justify-center text-black text-[8px] font-black">E</div>
+                                            Elite SC
+                                        </td>
+                                        <td class="p-4 text-center text-gray-400">12</td>
+                                        <td class="p-4 text-center text-white">10</td>
+                                        <td class="p-4 text-center text-gray-400">2</td>
+                                        <td class="p-4 text-center text-gray-400">0</td>
+                                        <td class="p-4 text-center font-black text-yellow-500 text-lg">20</td>
+                                        <td class="p-4 text-right text-green-400 pr-6">+1.245</td>
+                                    </tr>
+                                    <tr class="hover:bg-white/5 transition-colors">
+                                        <td class="p-4 pl-6 font-bold text-gray-300 flex items-center gap-3">
+                                            <span class="text-gray-600 w-4">2</span> 
+                                            <div class="w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-[8px] font-bold">T</div>
+                                            Thunder XI
+                                        </td>
+                                        <td class="p-4 text-center text-gray-400">12</td>
+                                        <td class="p-4 text-center text-white">8</td>
+                                        <td class="p-4 text-center text-gray-400">4</td>
+                                        <td class="p-4 text-center text-gray-400">0</td>
+                                        <td class="p-4 text-center font-bold text-white">16</td>
+                                        <td class="p-4 text-right text-green-400 pr-6">+0.856</td>
+                                    </tr>
+                                    <tr class="hover:bg-white/5 transition-colors">
+                                        <td class="p-4 pl-6 font-bold text-gray-300 flex items-center gap-3">
+                                            <span class="text-gray-600 w-4">3</span> 
+                                            <div class="w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-[8px] font-bold">R</div>
+                                            Royal Strikers
+                                        </td>
+                                        <td class="p-4 text-center text-gray-400">12</td>
+                                        <td class="p-4 text-center text-white">7</td>
+                                        <td class="p-4 text-center text-gray-400">5</td>
+                                        <td class="p-4 text-center text-gray-400">0</td>
+                                        <td class="p-4 text-center font-bold text-white">14</td>
+                                        <td class="p-4 text-right text-gray-400 pr-6">+0.534</td>
+                                    </tr>
+                                     <tr class="hover:bg-white/5 transition-colors">
+                                        <td class="p-4 pl-6 font-bold text-gray-300 flex items-center gap-3">
+                                            <span class="text-gray-600 w-4">4</span> 
+                                            <div class="w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-[8px] font-bold">D</div>
+                                            Daredevils
+                                        </td>
+                                        <td class="p-4 text-center text-gray-400">12</td>
+                                        <td class="p-4 text-center text-white">6</td>
+                                        <td class="p-4 text-center text-gray-400">6</td>
+                                        <td class="p-4 text-center text-gray-400">0</td>
+                                        <td class="p-4 text-center font-bold text-white">12</td>
+                                        <td class="p-4 text-right text-red-400 pr-6">-0.124</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STATS TAB -->
+                <div id="tab-stats" class="tournament-content hidden fade-in">
+                    <div class="grid md:grid-cols-2 gap-8">
+                         <!-- Top Run Scorers -->
+                         <div class="glass-panel p-6 rounded-2xl">
+                             <h3 class="font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-2 border-b border-white/10 pb-4">
+                                <i class="fas fa-baseball-bat-ball text-orange-500"></i> Top Run Scorers
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-black text-orange-500/50 w-6">1</span>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-white">Rahul Sharma</div>
+                                        <div class="text-xs text-gray-500">Elite SC</div>
+                                    </div>
+                                    <div class="text-xl font-black text-orange-500">458</div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-black text-gray-700 w-6">2</span>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-gray-300">Vikas Kumar</div>
+                                        <div class="text-xs text-gray-500">Thunder XI</div>
+                                    </div>
+                                    <div class="text-xl font-black text-white">412</div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-black text-gray-700 w-6">3</span>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-gray-300">John Smith</div>
+                                        <div class="text-xs text-gray-500">Royal Strikers</div>
+                                    </div>
+                                    <div class="text-xl font-black text-white">389</div>
+                                </div>
+                            </div>
+                         </div>
+
+                         <!-- Top Wicket Takers -->
+                         <div class="glass-panel p-6 rounded-2xl">
+                             <h3 class="font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-2 border-b border-white/10 pb-4">
+                                <i class="fas fa-bullseye text-purple-500"></i> Top Wicket Takers
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-black text-purple-500/50 w-6">1</span>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-white">Amit Patel</div>
+                                        <div class="text-xs text-gray-500">Elite SC</div>
+                                    </div>
+                                    <div class="text-xl font-black text-purple-500">24</div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-black text-gray-700 w-6">2</span>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-gray-300">Sameer Khan</div>
+                                        <div class="text-xs text-gray-500">Daredevils</div>
+                                    </div>
+                                    <div class="text-xl font-black text-white">21</div>
+                                </div>
+                                 <div class="flex items-center gap-4">
+                                    <span class="text-2xl font-black text-gray-700 w-6">3</span>
+                                    <div class="flex-1">
+                                        <div class="font-bold text-gray-300">Rajesh K</div>
+                                        <div class="text-xs text-gray-500">Thunder XI</div>
+                                    </div>
+                                    <div class="text-xl font-black text-white">19</div>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- BRACKET TAB -->
+                <div id="tab-bracket" class="tournament-content hidden fade-in">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-8 overflow-x-auto pb-8">
+                        <!-- Semis -->
+                        <div class="flex flex-col gap-12 w-full md:w-1/3">
+                            <div class="glass-panel p-4 rounded-xl relative">
+                                <div class="absolute -right-6 top-1/2 w-6 h-0.5 bg-gray-700 hidden md:block"></div>
+                                <h4 class="text-xs font-bold text-gray-500 uppercase mb-2">Semi Final 1</h4>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-bold text-white">Elite SC</span>
+                                    <span class="font-black text-yellow-500">WIN</span>
+                                </div>
+                                <div class="flex justify-between items-center opacity-50">
+                                    <span class="font-bold text-white">Daredevils</span>
+                                    <span class="text-xs">LOSE</span>
+                                </div>
+                            </div>
+                            <div class="glass-panel p-4 rounded-xl relative">
+                                <div class="absolute -right-6 top-1/2 w-6 h-0.5 bg-gray-700 hidden md:block"></div>
+                                 <div class="absolute -right-6 top-[-30px] bottom-[-30px] w-0.5 bg-gray-700 hidden md:block"></div>
+                                <h4 class="text-xs font-bold text-gray-500 uppercase mb-2">Semi Final 2</h4>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-bold text-white">Thunder XI</span>
+                                    <span class="font-black text-yellow-500">WIN</span>
+                                </div>
+                                <div class="flex justify-between items-center opacity-50">
+                                    <span class="font-bold text-white">Royal Strikers</span>
+                                    <span class="text-xs">LOSE</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Final -->
+                         <div class="w-full md:w-1/3 flex items-center justify-center">
+                             <div class="glass-panel p-6 rounded-xl w-full relative border-2 border-yellow-500/30 shadow-[0_0_30px_rgba(255,215,0,0.1)]">
+                                 <div class="absolute -left-6 top-1/2 w-6 h-0.5 bg-gray-700 hidden md:block"></div>
+                                 <div class="text-center mb-4">
+                                     <i class="fas fa-trophy text-4xl text-yellow-500 mb-2"></i>
+                                     <h4 class="text-xs font-bold text-yellow-500 uppercase tracking-widest">Grand Final</h4>
+                                 </div>
+                                <div class="flex justify-between items-center mb-2 bg-gradient-to-r from-yellow-500/20 to-transparent p-2 rounded">
+                                    <span class="font-bold text-white">Elite SC</span>
+                                    <span class="font-black text-white">???</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2">
+                                    <span class="font-bold text-white">Thunder XI</span>
+                                    <span class="font-black text-white">???</span>
+                                </div>
+                                <div class="text-center mt-4 text-xs font-bold text-gray-500">
+                                    Dec 30 • City Stadium
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+     <!-- Footer Placeholder -->
+    {% include 'footer.html' %}
+
+    
+    <!-- MATCH DETAILS MODAL -->
+    <div id="matchModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-50 hidden overflow-y-auto">
+        <div class="min-h-screen px-4 text-center">
+            <span class="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+            <div class="inline-block w-full max-w-4xl my-8 text-left align-middle transition-all transform bg-slate-900 border border-white/10 rounded-2xl shadow-2xl p-6">
+                <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                    <h3 class="text-2xl font-bold text-white">Match Scorecard</h3>
+                    <button onclick="closeMatchModal()" class="text-slate-400 hover:text-white cursor-pointer border-none bg-transparent text-2xl"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="matchModalContent">
+                    <!-- Dynamic Match Content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

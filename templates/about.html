@@ -1,0 +1,98 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Club | ELITE SOCIAL CLUB</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Placeholder -->
+    {% include 'header.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+            <div class="max-w-7xl mx-auto px-4 py-20">
+                 <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-6xl font-black mb-4">CLUB <span class="text-gradient-gold">LEGACY</span></h2>
+                    <p class="text-gray-400 font-light">More than just a cricket club.</p>
+                </div>
+                <div class="glass-panel p-10 rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-10 opacity-5 pointer-events-none"><i class="fas fa-history text-9xl text-white"></i></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-16 items-center relative z-10">
+                        <div>
+                            <div class="mb-8">
+                                <h3 class="text-3xl font-black text-white mb-6">Our History</h3>
+                                <p class="text-gray-400 mb-6 leading-relaxed text-lg">Elite Social Club was established in 2015 by a group of cricket enthusiasts who shared a common dream - to create a platform where talent meets opportunity. Starting with just 11 players and a small practice ground, we have grown into a formidable force in the district circuit.</p>
+                                <p class="text-gray-400 mb-6 leading-relaxed text-lg">Today, we are a community that nurtures young talent, promotes sportsmanship, and competes at the highest levels.</p>
+                            </div>
+                            
+                            <div class="border-t border-white/5 pt-10">
+                                <h4 class="font-black text-white text-xl mb-8 uppercase tracking-widest">Leadership</h4>
+                                <div class="grid grid-cols-2 gap-8">
+                                    <div class="flex items-center gap-4 group cursor-pointer">
+                                        <div class="w-14 h-14 rounded-xl bg-gray-800 flex items-center justify-center text-yellow-500 text-xl font-black border border-gray-700 group-hover:border-yellow-500 transition-colors">RK</div>
+                                        <div>
+                                            <h5 class="font-bold text-white group-hover:text-yellow-500 transition-colors">Rajesh Krishnan</h5>
+                                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Founder</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 group cursor-pointer">
+                                        <div class="w-14 h-14 rounded-xl bg-gray-800 flex items-center justify-center text-blue-500 text-xl font-black border border-gray-700 group-hover:border-blue-500 transition-colors">SM</div>
+                                        <div>
+                                            <h5 class="font-bold text-white group-hover:text-blue-500 transition-colors">Sunil Mehta</h5>
+                                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Co-Founder</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 group cursor-pointer">
+                                        <div class="w-14 h-14 rounded-xl bg-gray-800 flex items-center justify-center text-green-500 text-xl font-black border border-gray-700 group-hover:border-green-500 transition-colors">RS</div>
+                                        <div>
+                                            <h5 class="font-bold text-white group-hover:text-green-500 transition-colors">Rahul Sharma</h5>
+                                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Captain</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-4 group cursor-pointer">
+                                        <div class="w-14 h-14 rounded-xl bg-gray-800 flex items-center justify-center text-purple-500 text-xl font-black border border-gray-700 group-hover:border-purple-500 transition-colors">AP</div>
+                                        <div>
+                                            <h5 class="font-bold text-white group-hover:text-purple-500 transition-colors">Amit Patel</h5>
+                                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Vice Captain</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative h-full min-h-[400px]">
+                            <div class="absolute -inset-4 bg-gradient-gold rounded-3xl blur-2xl opacity-20"></div>
+                            <div class="relative rounded-3xl overflow-hidden h-full bg-gray-900 border border-white/10 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1593341646246-2776c59b6826?w=800" class="w-full h-full object-cover opacity-60 mix-blend-overlay">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-center p-8">
+                                        <i class="fas fa-users text-6xl text-white/20 mb-4"></i>
+                                        <h4 class="text-2xl font-black text-white">JOIN THE CLUB</h4>
+                                        <p class="text-gray-400 mt-2 mb-6">Be part of the legacy.</p>
+                                        <a href="contact.html" class="btn-gold px-8 py-3 rounded-full text-xs font-bold decoration-none flex items-center justify-center mx-auto w-max">Register Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+      <!-- Footer Placeholder -->
+    {% include 'footer.html' %}
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

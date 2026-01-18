@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ELITE SOCIAL CLUB</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Placeholder -->
+    {% include 'header.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+             <div class="max-w-5xl mx-auto px-4 py-20">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-6xl font-black mb-4">GET IN <span class="text-gradient-gold">TOUCH</span></h2>
+                    <p class="text-gray-400 font-light">Join the club, sponsor us, or just say hello.</p>
+                </div>
+
+                <div class="grid md:grid-cols-5 gap-8">
+                    <!-- Contact Info Column -->
+                    <div class="md:col-span-2 space-y-6">
+                        <div class="glass-panel p-6 rounded-2xl border-l-4 border-yellow-500">
+                            <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 mb-4"><i class="fas fa-envelope text-xl"></i></div>
+                            <h3 class="text-xl font-bold text-white mb-1">Email Us</h3>
+                            <p class="text-gray-500 text-sm mb-4">For general inquiries and trials.</p>
+                            <a href="mailto:contact@elitesc.com" class="text-yellow-500 font-bold hover:text-white transition-colors decoration-none">contact@elitesc.com</a>
+                        </div>
+                        
+                        <div class="glass-panel p-6 rounded-2xl border-l-4 border-blue-500">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 mb-4"><i class="fas fa-phone text-xl"></i></div>
+                            <h3 class="text-xl font-bold text-white mb-1">Call Us</h3>
+                            <p class="text-gray-500 text-sm mb-4">Mon-Fri from 9am to 6pm.</p>
+                            <a href="tel:+919876543210" class="text-blue-500 font-bold hover:text-white transition-colors decoration-none">+91 98765 43210</a>
+                        </div>
+
+                        <div class="glass-panel p-6 rounded-2xl border-l-4 border-green-500">
+                            <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 mb-4"><i class="fas fa-map-marker-alt text-xl"></i></div>
+                            <h3 class="text-xl font-bold text-white mb-1">Visit Us</h3>
+                            <p class="text-gray-500 text-sm">City Stadium Grounds,<br>Sports District, Bangalore</p>
+                        </div>
+                    </div>
+
+                    <!-- Form Column -->
+                    <div class="md:col-span-3">
+                        <div class="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-10 opacity-5 pointer-events-none"><i class="fas fa-paper-plane text-9xl text-white"></i></div>
+                            
+                            <h3 class="text-2xl font-black text-white mb-6 uppercase tracking-widest">Send a Message</h3>
+                            <form onsubmit="event.preventDefault(); alert('Message sent successfully!');" class="space-y-6 relative z-10">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label class="text-xs font-bold text-gray-500 uppercase tracking-widest ml-1">Your Name</label>
+                                        <input type="text" class="w-full bg-gray-900/50 border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:bg-gray-900 text-white transition-all placeholder-gray-700" placeholder="John Doe">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-xs font-bold text-gray-500 uppercase tracking-widest ml-1">Your Email</label>
+                                        <input type="email" class="w-full bg-gray-900/50 border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:bg-gray-900 text-white transition-all placeholder-gray-700" placeholder="john@example.com">
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-gray-500 uppercase tracking-widest ml-1">Subject</label>
+                                    <select class="w-full bg-gray-900/50 border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:bg-gray-900 text-white transition-all appearance-none cursor-pointer">
+                                        <option>Club Membership Inquiry</option>
+                                        <option>Sponsorship Opportunities</option>
+                                        <option>Friendly Match Request</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-gray-500 uppercase tracking-widest ml-1">Message</label>
+                                    <textarea rows="4" class="w-full bg-gray-900/50 border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-yellow-500 focus:bg-gray-900 text-white transition-all placeholder-gray-700" placeholder="How can we help you?"></textarea>
+                                </div>
+                                <button class="btn-gold w-full py-4 rounded-xl text-sm font-bold shadow-lg hover:shadow-yellow-500/20 cursor-pointer">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+      <!-- Footer Placeholder -->
+    {% include 'footer.html' %}
+
+   <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
